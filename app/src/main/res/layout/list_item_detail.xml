@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="item"
+            type="com.suraj.movies.ui.model.TestData"/>
+    </data>
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        android:padding="@dimen/dim_16dp"
+        app:cardElevation="@dimen/dim_4dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dim_16dp"
+                android:text="@{item.name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_20sp"
+                app:fontFamily="@font/roboto_bold"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/poster"
+                    android:layout_width="@dimen/dim_140dp"
+                    android:layout_height="wrap_content"
+                    itemView="@{item.posterLink}"
+                    android:visibility="@{item.posterLink.isEmpty() ? View.GONE : View.VISIBLE}"
+                    android:layout_marginLeft="@dimen/dim_16dp"
+                    android:layout_marginBottom="@dimen/dim_10dp"
+                    android:background="@drawable/image_view"
+                    />
+                <RelativeLayout
+                    android:id="@+id/poster_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/poster"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/plan_view"
+                        android:layout_marginLeft="@dimen/dim_16dp"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/plan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dim_10dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@{item.payment_plan}"
+                            android:textColor="@color/color_1f1f1f"
+                            android:textSize="@dimen/dim_18sp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/release"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@{item.release_year}"
+                            android:textColor="@color/color_1f1f1f"
+                            android:textSize="@dimen/dim_18sp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/plan_view"
+                        android:id="@+id/duration_view"
+                        android:layout_marginLeft="@dimen/dim_16dp"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/plan"
+                            android:layout_marginTop="@dimen/dim_8dp"
+                            android:layout_marginRight="@dimen/dim_10dp"
+                            android:text="@{item.video_duration+`hrs`}"
+                            android:textSize="@dimen/dim_18sp"
+                            android:visibility="@{item.video_duration.isEmpty() ? View.GONE : View.VISIBLE}"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/release"
+                            android:layout_marginTop="@dimen/dim_8dp"
+                            android:text="@{`Type: `+item.type}"
+                            android:textSize="@dimen/dim_18sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:visibility="@{item.type.isEmpty() ? View.GONE : View.VISIBLE}"
+                            />
+
+                    </LinearLayout>
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/created"
+                        dateView="@{`Created On: `+item.created_on}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/duration_view"
+                        android:layout_marginLeft="@dimen/dim_16dp"
+                        android:layout_marginBottom="@dimen/dim_4dp"
+                        android:textSize="@dimen/dim_16sp"
+                        android:visibility="@{item.created_on.isEmpty() ? View.GONE : View.VISIBLE}"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/updated"
+                        dateView="@{`Updated On: `+ item.updated_on}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/created"
+                        android:layout_marginLeft="@dimen/dim_16dp"
+                        android:layout_marginBottom="@dimen/dim_4dp"
+                        android:textSize="@dimen/dim_16sp"
+                        android:visibility="@{item.updated_on.isEmpty() ? View.GONE : View.VISIBLE}"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/short_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/updated"
+                        android:layout_marginBottom="@dimen/dim_4dp"
+                        android:layout_marginLeft="@dimen/dim_16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto"
+                        android:text="@{item.shortDescription}"
+                        android:textSize="@dimen/dim_15sp"
+                        android:textColor="@color/color_383838"
+                        android:visibility="@{item.shortDescription.isEmpty() ? View.GONE : View.VISIBLE}"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/poster_content"
+                android:layout_marginBottom="@dimen/dim_16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/dim_4dp"
+                android:layout_marginRight="@dimen/dim_16dp"
+                android:layout_marginLeft="@dimen/dim_16dp"
+                android:text="@{item.description}"
+                android:textSize="@dimen/dim_14sp"
+                android:textColor="@color/color_505050"
+                android:visibility="@{item.description.isEmpty() ? View.GONE : View.VISIBLE}"
+                />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
+

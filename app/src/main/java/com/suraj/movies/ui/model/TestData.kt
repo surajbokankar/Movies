@@ -2,8 +2,10 @@ package com.suraj.movies.ui.model
 
 import android.graphics.Bitmap
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.suraj.movies.R
 
 data class TestData(
     val created_on: String,
@@ -25,6 +27,17 @@ data class TestData(
             try {
                 Glide.with(view.context).load(data)
                     .into(view)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        @JvmStatic
+        @BindingAdapter("dateView")
+        fun setDateView(view: AppCompatTextView, data: String) {
+            try {
+               val values=data.split("T")
+               view.text=values[0]
             } catch (e: Exception) {
                 e.printStackTrace()
             }
