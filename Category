@@ -1,0 +1,110 @@
+{
+  "errorCode": 1,
+  "erroMesage": "Success",
+  "data": [
+    {
+      "categoryId": 1,
+      "name": "Appetizer",
+      "description": "Sed consequat, sapien in scelerisque egestas, neque nisi dapibus magna, non malesuada lectus ligula vel justo. Vestibulum felis nisi, tincidunt eu est quis, faucibus tincidunt ante.",
+      "parentId": null,
+      "priority": 1,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "appetizer",
+      "restoId": 1
+    },
+    {
+      "categoryId": 2,
+      "name": "Main Course",
+      "description": "",
+      "parentId": null,
+      "priority": 6,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "main-course",
+      "restoId": 1
+    },
+    {
+      "categoryId": 3,
+      "name": "Salads",
+      "description": "Etiam tristique pretium enim, vel convallis sem fermentum eget. Donec porta risus vestibulum elit gravida ornare. Quisque neque mi, tincidunt quis leo eget, ornare aliquam nulla. Morbi at lacinia lorem. Aenean at accumsan turpis.",
+      "parentId": null,
+      "priority": 3,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "salads",
+      "restoId": 1
+    },
+    {
+      "categoryId": 4,
+      "name": "Seafoods",
+      "description": "Morbi blandit massa et massa ornare, sed aliquam risus suscipit. Suspendisse et felis vitae ex pulvinar dictum et non dui. Suspendisse ullamcorper diam ac aliquet malesuada. Duis auctor nisi turpis, a ornare nisi auctor sit amet. Suspendisse imperdiet mag",
+      "parentId": null,
+      "priority": 4,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "seafoods",
+      "restoId": 1
+    },
+    {
+      "categoryId": 5,
+      "name": "Traditional",
+      "description": "Vivamus interdum erat ac aliquam porttitor. Morbi malesuada ligula non elit sagittis, et facilisis dolor porta. Aenean aliquet leo eu massa tempor varius. Donec a erat massa. Praesent vitae libero a ligula auctor laoreet.",
+      "parentId": null,
+      "priority": 5,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "traditional",
+      "restoId": 1
+    },
+    {
+      "categoryId": 6,
+      "name": "Desserts",
+      "description": "",
+      "parentId": null,
+      "priority": 8,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "desserts",
+      "restoId": 1
+    },
+    {
+      "categoryId": 7,
+      "name": "Drinks",
+      "description": "",
+      "parentId": null,
+      "priority": 9,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "drinks",
+      "restoId": 1
+    },
+    {
+      "categoryId": 8,
+      "name": "Specials",
+      "description": "Praesent nec velit faucibus, consequat justo eu, malesuada est. Aenean leo ipsum, venenatis nec dapibus ullamcorper, volutpat eget leo. Phasellus nec ipsum lorem. Etiam nec ullamcorper augue. Phasellus mauris turpis, consequat et rutrum at, bibendum eu mi",
+      "parentId": null,
+      "priority": 2,
+      "image": null,
+      "status": 1,
+      "nestLeft": null,
+      "nestRight": null,
+      "permLink": "specials",
+      "restoId": 1
+    }
+  ]
+}
